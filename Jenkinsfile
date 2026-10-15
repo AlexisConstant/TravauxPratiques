@@ -37,10 +37,7 @@ pipeline {
 
         stage('Déploiement recette') {
             when {
-                allOf {
-                    expression { params.ENVIRONNEMENT == 'recette' }
-                    branch 'main'
-                }
+                expression { params.ENVIRONNEMENT == 'recette' }
             }
             steps {
                 echo 'Déploiement en recette...'
